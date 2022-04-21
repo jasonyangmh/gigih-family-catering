@@ -51,6 +51,6 @@ RSpec.describe Food, type: :model do
   end
 
   it 'is invalid without has_many association to FoodCategory' do
-    expect(Food.reflect_on_association(:FoodCategory).macro).to eq(:has_many)
+    expect(Food.reflect_on_association(:FoodCategories).macro).to eq(:has_many)
   end
 end
