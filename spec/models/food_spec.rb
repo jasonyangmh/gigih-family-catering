@@ -33,4 +33,10 @@ RSpec.describe Food, type: :model do
     food.valid?
     expect(food.errors[:price]).to include("is not a number")
   end
+
+  it 'is invalid with a price less than 0.01' do
+    food = FactoryBot.build(:food, price: 0.009)
+    food.valid?
+    expect(food.errors[:price]).to include("must be greater than or equal to 0.01")
+  end
 end
