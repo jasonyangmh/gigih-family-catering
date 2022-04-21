@@ -20,4 +20,11 @@ RSpec.describe Food, type: :model do
     food.valid?
     expect(food.errors[:price]).to include("can't be blank")
   end
+
+  it "is invalid with a duplicate name" do
+    food1 = FactoryBot.create(:food, name: 'Fried Rice')
+    food2 = FactoryBot.build(:food, name: 'Fried Rice')
+    food2.valid?
+    expect(food2.errors[:name]).to include("has already been taken")
+  end
 end
