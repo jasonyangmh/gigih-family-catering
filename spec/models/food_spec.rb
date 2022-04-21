@@ -28,7 +28,7 @@ RSpec.describe Food, type: :model do
     expect(food2.errors[:name]).to include("has already been taken")
   end
 
-  it 'is invalid with a non numeric value for price' do
+  it 'is invalid with a non numeric price' do
     food = FactoryBot.build(:food, price: 'Fried Rice')
     food.valid?
     expect(food.errors[:price]).to include("is not a number")
