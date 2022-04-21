@@ -9,6 +9,10 @@ RSpec.describe Food, type: :model do
     expect(FactoryBot.build(:food)).to be_valid
   end
 
+  it 'is valid with a name, a price, and a description' do
+    expect(FactoryBot.build(:food_with_description)).to be_valid
+  end
+
   it 'is invalid without a name' do
     food = FactoryBot.build(:food, name: nil)
     food.valid?
