@@ -43,4 +43,10 @@ RSpec.describe Food, type: :model do
     food.valid?
     expect(food.errors[:price]).to include("must be greater than or equal to 0.01")
   end
+
+  it 'is invalid with a description longer than 150 characters' do
+    food = FactoryBot.build(:food_with_invalid_description)
+    food.valid?
+    expect(food.errors[:description]).to include("is too long (maximum is 150 characters)")
+  end
 end

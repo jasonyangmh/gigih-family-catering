@@ -9,4 +9,10 @@ FactoryBot.define do
     price { 25000.0 }
     description { "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m" }
   end
+
+  factory :food_with_invalid_description, parent: :food do
+    name { Faker::Food.dish }
+    price { 25000.0 }
+    description { "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis pa" }
+  end
 end
