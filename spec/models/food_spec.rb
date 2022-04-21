@@ -18,6 +18,6 @@ RSpec.describe Food, type: :model do
   it 'is invalid without a price' do
     food = FactoryBot.build(:food, price: nil)
     food.valid?
-    expect(food.errors[:name]).to include("can't be blank")
+    expect(food.errors[:price]).to include("can't be blank")
   end
 end
