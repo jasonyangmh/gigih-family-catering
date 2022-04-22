@@ -4,4 +4,5 @@ class Food < ApplicationRecord
   validates :description, length: { maximum: 150 }
   has_many :FoodCategories
   has_many :Categories, through: :FoodCategories
+  has_many :OrderDetails
 end
