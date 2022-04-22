@@ -21,4 +21,8 @@ RSpec.describe Customer, type: :model do
     customer2.valid?
     expect(customer2.errors[:email]).to include("has already been taken")
   end
+
+  it 'is invalid without has_many association to Orders' do
+    expect(Customer.reflect_on_association(:Orders).macro).to eq(:has_many)
+  end
 end
