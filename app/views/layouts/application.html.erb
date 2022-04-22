@@ -7,9 +7,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Gigih</span>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
