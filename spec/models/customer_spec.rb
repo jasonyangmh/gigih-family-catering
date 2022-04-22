@@ -15,7 +15,7 @@ RSpec.describe Customer, type: :model do
     expect(customer.errors[:email]).to include("can't be blank")
   end
 
-  it "is invalid without an email" do
+  it "is invalid with a duplicate email" do
     customer1 = FactoryBot.create(:customer, email: "halo@gigih.com")
     customer2 = FactoryBot.build(:customer, email: "halo@gigih.com")
     customer2.valid?
