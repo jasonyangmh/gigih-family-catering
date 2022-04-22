@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsRuby3</title>
+    <title>Gigih Family Gathering</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,21 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1">Gigih</span>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Gigih</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/foods">Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories">Category</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     <div class="body-container">
