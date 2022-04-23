@@ -5,6 +5,10 @@ RSpec.describe Order, type: :model do
     expect(FactoryBot.build(:order)).to be_valid
   end
 
+  it 'is valid with an email, a status, and a price' do
+    expect(FactoryBot.build(:order)).to be_valid
+  end
+
   it 'is invalid without has_many association to OrderDetails' do
     expect(Order.reflect_on_association(:OrderDetails).macro).to eq(:has_many)
   end
