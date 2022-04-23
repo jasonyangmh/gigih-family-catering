@@ -18,18 +18,16 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.select :status, ["NEW", "PAID"] %>
+    <%= form.select :status, ["NEW", "PAID", "CANCELLED"] %>
   </div>
   
   <div>
-    <%= form.fields_for :order_details do |order_details_form| %>
-      <li>
-        <%= order_details_form.label :food_name %>
-        <%= order_details_form.collection_select :food_name, Food.order(:name), :id, :name %>
+    <%= form.fields_for :order_details do |builder| %>
+      <%= builder.label :food_id %>
+      <%= builder.collection_select :food_id, Food.order(:name), :id, :name %>
 
-        <%= order_details_form.label :quantity %>
-        <%= order_details_form.number_field :quantity %>
-      </li>
+      <%= builder.label :quantity %>
+      <%= builder.number_field :quantity %>
     <% end %>
   </div>
 

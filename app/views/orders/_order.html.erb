@@ -14,4 +14,14 @@
     <%= order.total_price %>
   </p>
 
+  <p>
+    <strong>Order details:</strong>
+    <% order.order_details.each do |order_detail| %>
+				<%= order_detail.food.name %>
+				<%= order_detail.price %>
+				<%= order_detail.quantity %>
+				<%= order_detail.sub_total %>
+    <% end %>
+  </p>
+
 </div>
