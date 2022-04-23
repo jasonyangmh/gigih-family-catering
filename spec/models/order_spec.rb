@@ -15,6 +15,12 @@ RSpec.describe Order, type: :model do
     expect(order.errors[:email]).to include("can't be blank")
   end
 
+  it 'is invalid with an invalid email' do
+		order = FactoryBot.build(:order, email: "halo@gigih")
+		order.valid?
+		expect(order.errors[:email]).to include("is invalid")
+	end
+
   it 'is invalid without has_many association to OrderDetails' do
     expect(Order.reflect_on_association(:OrderDetails).macro).to eq(:has_many)
   end
