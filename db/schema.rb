@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2022_04_23_003546) do
 
   create_table "orders", force: :cascade do |t|
     t.string "email"
-    t.string "status"
+    t.string "status", default: "new"
     t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
