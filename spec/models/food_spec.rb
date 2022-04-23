@@ -50,12 +50,12 @@ RSpec.describe Food, type: :model do
     expect(food.errors[:description]).to include("is too long (maximum is 150 characters)")
   end
 
-  it 'is invalid without has_many association to FoodCategories' do
-    expect(Food.reflect_on_association(:FoodCategories).macro).to eq(:has_many)
+  it 'is invalid without has_many association to food_categories' do
+    expect(Food.reflect_on_association(:food_categories).macro).to eq(:has_many)
   end
 
-  it 'is invalid without has_many association to Categories' do
-    expect(Food.reflect_on_association(:Categories).macro).to eq(:has_many)
+  it 'is invalid without has_many association to categories' do
+    expect(Food.reflect_on_association(:categories).macro).to eq(:has_many)
   end
 
   it 'is invalid without has_many association to OrderDetails' do

@@ -22,11 +22,11 @@ RSpec.describe Category, type: :model do
     expect(category2.errors[:name]).to include("has already been taken")
   end
 
-  it 'is invalid without has_many association to FoodCategories' do
-    expect(Category.reflect_on_association(:FoodCategories).macro).to eq(:has_many)
+  it 'is invalid without has_many association to food_categories' do
+    expect(Category.reflect_on_association(:food_categories).macro).to eq(:has_many)
   end
 
-  it 'is invalid without has_many association to Foods' do
-    expect(Category.reflect_on_association(:Foods).macro).to eq(:has_many)
+  it 'is invalid without has_many association to foods' do
+    expect(Category.reflect_on_association(:foods).macro).to eq(:has_many)
   end
 end
