@@ -10,8 +10,4 @@ class OrderDetail < ApplicationRecord
 	def set_sub_total
 		self.sub_total = self.price * self.quantity
 	end
-
-  def sub_total
-    self.sub_total
-  end
 end

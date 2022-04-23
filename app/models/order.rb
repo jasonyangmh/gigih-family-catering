@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   has_many :order_details, dependent: :destroy
-  before_save :set_total_price
   
   def order_details_attributes=(order_details_attributes)
     order_details_attributes.each do |i, order_detail_attributes|
@@ -9,7 +8,7 @@ class Order < ApplicationRecord
     end
   end
 
-  def set_total_price
-    self.total_price = OrderDetail.find_by(order_id: self.id).sub_total
-	end
+  def total_price
+    self.total_price = self.order_details.map { |order_detail| order_detail.sub_total }.sum
+  end
 end
