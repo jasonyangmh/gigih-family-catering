@@ -20,10 +20,17 @@
     <%= form.label :status, style: "display: block" %>
     <%= form.select :status, ["NEW", "PAID"] %>
   </div>
-
+  
   <div>
-    <%= form.label :total_price, style: "display: block" %>
-    <%= form.number_field :total_price %>
+    <%= form.fields_for :order_details do |order_details_form| %>
+      <li>
+        <%= order_details_form.label :food_name %>
+        <%= order_details_form.collection_select :food_name, Food.order(:name), :id, :name %>
+
+        <%= order_details_form.label :quantity %>
+        <%= order_details_form.number_field :quantity %>
+      </li>
+    <% end %>
   </div>
 
   <div>
