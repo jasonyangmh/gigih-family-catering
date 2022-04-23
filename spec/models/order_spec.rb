@@ -16,7 +16,7 @@ RSpec.describe Order, type: :model do
   end
 
   it 'is invalid with an invalid email' do
-		order = FactoryBot.build(:order, email: "halo@gigih")
+		order = FactoryBot.build(:order, email: "halogigih")
 		order.valid?
 		expect(order.errors[:email]).to include("is invalid")
 	end
