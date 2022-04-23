@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :order do
-    email { "MyString" }
-    status { "MyString" }
-    total_price { 1.5 }
+    email { Faker::Internet.email }
+    status { "new" }
+    total_price { 25000.0 }
   end
 end
