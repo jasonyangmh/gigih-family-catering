@@ -1,7 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @food %>
-<%= render @food.categories %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%= render @food %>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Categories
+  </div>
+  <ul class="list-group list-group-flush">
+    <%= render @food.categories %>
+  </ul>
+</div>
 
 <div>
   <%= link_to "Edit this food", edit_food_path(@food) %> |
