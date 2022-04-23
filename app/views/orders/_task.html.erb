@@ -1,0 +1,8 @@
+<%= form.order_details_form.label :food_name %>
+<%= order_details_form.collection_select :food_id, Food.order(:name), :id, :name %>
+
+<%= form.order_details_form.label :quantity %>
+<%= order_details_form.number_field :quantity %>
+
+<%= form.input_field :_destroy, as: :hidden %>
+<%= link_to 'Delete', '#', class: 'remove_record' %>

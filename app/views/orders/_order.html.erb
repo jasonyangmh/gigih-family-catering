@@ -17,10 +17,10 @@
   <p>
     <strong>Order details:</strong>
     <% order.order_details.each do |order_detail| %>
-				<%= order_detail.food.name %>
-				<%= order_detail.price %>
-				<%= order_detail.quantity %>
-				<%= order_detail.sub_total %>
+				<%= order_detail.food.name %><br>
+				<%= order_detail.price %><br>
+				<%= order_detail.quantity %><br>
+				<%= order_detail.sub_total %><br>
     <% end %>
   </p>
 
